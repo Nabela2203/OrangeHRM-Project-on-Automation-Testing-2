@@ -6,6 +6,7 @@ class AdminPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
+    # Locators in AdminPage
     admin_menu_link_text = "Admin"
     user_management_xpath = "//span[text()='User Management ']"
     job_xpath = "//span[text()='Job ']"
@@ -26,10 +27,10 @@ class AdminPage(BasePage):
     claim_menu_link_text = "Claim"
     buzz_menu_link_text = "Buzz"
 
-    def click_admin(self):
+    def click_admin(self):  # To click Admin menu
         self.element_click("admin_menu_link_text", self.admin_menu_link_text)
 
-    def validate_displaying_options_on_admin_page(self):
+    def validate_displaying_options_on_admin_page(self):  # To validate header options are visible in AdminPage
 
         user_management = self.check_display_status_of_element("user_management_xpath", self.user_management_xpath)
         job = self.check_display_status_of_element("job_xpath", self.job_xpath)
@@ -44,7 +45,7 @@ class AdminPage(BasePage):
         else:
             return False
 
-    def validate_menu_displaying_on_admin_page(self):
+    def validate_menu_displaying_on_admin_page(self):  # To validate main menu options are visible in AdminPage
 
         pim = self.check_display_status_of_element("pim_menu_link_text", self.pim_menu_link_text)
         leave = self.check_display_status_of_element("leave_menu_link_text", self.leave_menu_link_text)
